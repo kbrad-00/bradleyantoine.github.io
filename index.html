@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="shortcut icon" type="image/png" href="img/icon.png" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Bradley Antoine | Data Analyst Portfolio</title>
+  <script defer src="script/script.js"></script>
+</head>
+
+<body>
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <nav class="nav">
+    <ul class="nav__links">
+      <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
+      <li class="nav__item"><a class="nav__link" href="#section--1">About</a></li>
+      <li class="nav__item"><a class="nav__link" href="#section--2">Projects</a></li>
+      <li class="nav__item"><a class="nav__link" href="#resume">Resume</a></li>
+    </ul>
+  </nav>
+
+  <div class="header__title">
+    <div class="header__text">
+      <h1>
+        Hey, I’m <span class="highlight">Bradley Antoine</span><br>
+        <span class="highlight">Data Analyst</span>
+      </h1>
+      <h4>
+        I enjoy finding stories hidden in data. Whether I’m improving a Power BI dashboard or analyzing trends in Excel,
+        I focus on clarity and purpose—helping teams make decisions they can trust.
+      </h4>
+    </div>
+
+    <!-- Profile Image -->
+    <div class="header__image-container">
+      <img src="img/brad.da.man.jpg" class="header__img" alt="Bradley portfolio banner" />
+    </div>
+  </div>
+</header>
+
+
+  <!-- ===== ABOUT / SKILLS ===== -->
+  <section class="section" id="section--1">
+    <div class="section__title">
+      <h2 class="section__description">About Me</h2>
+      <h3 class="section__header">My key professional skills and focus areas.</h3>
+    </div>
+
+    <div class="operations">
+      <div class="operations__tab-container">
+        <button class="btn operations__tab operations__tab--active" data-tab="1">Power BI</button>
+        <button class="btn operations__tab" data-tab="2">SQL</button>
+        <button class="btn operations__tab" data-tab="3">Excel</button>
+        <button class="btn operations__tab" data-tab="4">Tableau</button>
+        <button class="btn operations__tab" data-tab="5">Python</button>
+      </div>
+
+      <!-- Power BI -->
+      <div class="operations__content operations__content--1 operations__content--active">
+        <h5 class="operations__header">Power BI Dashboards & Data Visualization</h5>
+        <p>
+          Designed an <strong>interactive Power BI dashboard</strong> for <strong>Tampa Housing Authority (THA)</strong>
+          mapping all properties across the <strong>U.S. Virgin Islands</strong>, integrating live
+          <strong>Yardi housing data</strong>, <strong>geolocation layers</strong>, and <strong>drill-down analytics</strong>
+          to visualize property performance and compliance trends.
+        </p>
+        <ul>
+          <li>DAX measures for KPIs and trend analysis</li>
+          <li>Power Query for data cleaning and automation</li>
+          <li>Row-Level Security (RLS) for data governance</li>
+          <li>Dynamic filters and bookmarks for interactivity</li>
+          <li>Scheduled data refresh via Power BI Service</li>
+          <li>Custom color themes and layout optimization for accessibility</li>
+        </ul>
+      </div>
+
+      <!-- SQL -->
+      <div class="operations__content operations__content--2">
+        <h5 class="operations__header">SQL Querying & Data Management</h5>
+        <p>Transforming raw housing and financial data into reliable, queryable insights.</p>
+        <ul>
+          <li>Writing complex JOIN queries to merge Yardi housing and financial data</li>
+          <li>Creating CTEs and subqueries for reusable logic</li>
+          <li>Using aggregate functions (SUM, AVG, COUNT) for reporting metrics</li>
+          <li>Optimizing query speed with indexes and execution plans</li>
+          <li>Designing stored procedures to automate recurring data exports</li>
+          <li>Handling data normalization and relationships for analytics integrity</li>
+          <li>Creating backup scripts and views for clean visualization pipelines</li>
+          <li>Building ETL workflows to feed Power BI dashboards directly from SQL Server</li>
+        </ul>
+      </div>
+
+      <!-- Excel -->
+      <div class="operations__content operations__content--3">
+        <h5 class="operations__header">Excel Analytics & Automation</h5>
+        <p>Using Excel as a dynamic analytics and visualization engine.</p>
+        <ul>
+          <li>Advanced PivotTables and PivotCharts for multi-layered summaries</li>
+          <li>INDEX/MATCH, VLOOKUP, and XLOOKUP for smart data retrieval</li>
+          <li>Conditional formatting and data validation to ensure accuracy</li>
+          <li>Macros and VBA automation to streamline repetitive reporting</li>
+          <li>Power Query integration for large dataset transformation</li>
+          <li>Building dashboard-style visual summaries using shapes and slicers</li>
+          <li>Data cleaning with Text-to-Columns, Flash Fill, and formulas</li>
+          <li>Integrating Excel data with Power BI for unified analytics</li>
+        </ul>
+      </div>
+
+      <!-- Tableau -->
+      <div class="operations__content operations__content--4">
+        <h5 class="operations__header">Tableau Dashboards & Storytelling</h5>
+        <p>Creating visual data stories that make trends and patterns immediately clear.</p>
+        <ul>
+          <li>Connecting and blending multiple data sources (SQL, Excel, CSV)</li>
+          <li>Designing interactive dashboards with filters and parameters</li>
+          <li>Applying story points for step-by-step data narration</li>
+          <li>Using calculated fields and LOD expressions for advanced analysis</li>
+          <li>Visual design best practices for clarity and impact</li>
+          <li>Building dashboards for Spotify and Netflix datasets to explore user engagement trends</li>
+        </ul>
+      </div>
+
+      <!-- Python -->
+      <div class="operations__content operations__content--5">
+        <h5 class="operations__header">Python for Data Cleaning & Analysis</h5>
+        <p>Automating tasks, cleaning datasets, and visualizing data efficiently.</p>
+        <ul>
+          <li>Using Pandas and NumPy for data manipulation and exploration</li>
+          <li>Creating visual insights with Matplotlib and Seaborn</li>
+          <li>Exporting data from SQL and Excel into clean analysis-ready formats</li>
+          <li>Automating reports and ETL pipelines with simple scripts</li>
+          <li>Writing functions and loops to streamline analysis workflows</li>
+          <li>Leveraging Jupyter Notebooks for documentation and presentation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="section--2" style="background:#0b0b0b; color:white;">
+    <div class="section__title">
+      <h2 class="section__description" style="color:#ff7300;">Projects</h2>
+      <h3 class="section__header">A few highlights of my analytical work</h3>
+    </div>
+
+    <!-- ===== PROJECTS (HORIZONTAL SLIDER BAR) ===== -->
+<div class="project-bar">
+  
+  <div class="project-row">
+
+    <!-- PROJECT 1 -->
+    <div class="p-card">
+      <img src="img/brad.da.man.jpg" alt="">
+      <h3>Power BI Housing Dashboard</h3>
+      <p>Interactive dashboard mapping THA USVI properties using Yardi data.</p>
+      <p><strong>Tools:</strong> Power BI, SQL, Excel</p>
+      <a href="#" class="btn mag">View on GitHub</a>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="p-card">
+      <img src="img/brad.da.man.jpg" alt="">
+      <h3>Gender Disparities & Overdose Analysis</h3>
+      <p>Analyzed overdose trends by race, gender, and age.</p>
+      <p><strong>Tools:</strong> R, Power BI, Excel</p>
+      <a href="#" class="btn mag">View on GitHub</a>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="p-card">
+      <img src="img/brad.da.man.jpg" alt="">
+      <h3>SQL Data Pipeline Practice</h3>
+      <p>Built SQL pipelines to automate and optimize data cleaning.</p>
+      <p><strong>Tools:</strong> SQL Server, SSMS</p>
+      <a href="#" class="btn mag">View on GitHub</a>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="p-card">
+      <img src="img/brad.da.man.jpg" alt="">
+      <h3>Netflix Insights Visualization</h3>
+      <p>Tableau dashboard analyzing Netflix content trends.</p>
+      <p><strong>Tools:</strong> Tableau, Excel</p>
+      <a href="#" class="btn mag">View on GitHub</a>
+    </div>
+
+    <!-- PROJECT 5 -->
+    <div class="p-card">
+      <img src="img/brad.da.man.jpg" alt="">
+      <h3>Spotify Streaming Trends</h3>
+      <p>Visualized global streaming habits and engagement.</p>
+      <p><strong>Tools:</strong> Tableau, Excel</p>
+      <a href="#" class="btn mag">View on GitHub</a>
+    </div>
+
+    <!-- PROJECT 6 -->
+    <div class="p-card">
+      <img src="img/brad.da.man.jpg" alt="">
+      <h3>Excel KPI Dashboard</h3>
+      <p>Automated key THA metrics with Power Query + macros.</p>
+      <p><strong>Tools:</strong> Excel, Power Query</p>
+      <a href="#" class="btn mag">View on GitHub</a>
+    </div>
+
+  </div>
+
+<button class="project-arrow project-arrow--left">
+  <span>&#10094;</span>
+</button>
+
+<button class="project-arrow project-arrow--right">
+  <span>&#10095;</span>
+</button>
+
+</div>
+
+
+    
+
+  <!-- ===== RESUME VIEWER ===== -->
+  <section class="section" id="resume">
+    <div class="section__title">
+      <h2 class="section__description">My Resume</h2>
+      <h3 class="section__header">View, scroll, and download my full resume below.</h3>
+    </div>
+    <div class="resume-viewer" style="text-align:center;">
+      <iframe src="TECH-BRAD RESUME (1).pdf" title="Bradley Antoine Resume"
+        style="width:90%; height:1000px; border:none; border-radius:1rem; box-shadow:0 0 25px rgba(160,32,240,0.3);">
+      </iframe>
+      <div class="resume-buttons" style="display:flex; justify-content:center; margin-top:2rem;">
+        <a href="TECH-BRAD RESUME (1).pdf" download class="btn">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <ul class="footer__nav">
+      <li><a class="footer__link" href="#section--1">About</a></li>
+      <li><a class="footer__link" href="#section--2">Projects</a></li>
+      <li><a class="footer__link" href="#resume">Resume</a></li>
+      <li><a class="footer__link" href="mailto:Kbrad4056@yahoo.com">Email Me</a></li>
+    </ul>
+    <p class="footer__copyright">© 2025 Bradley Antoine. Built with ❤️ using HTML, CSS, and JavaScript.</p>
+  </footer>
+</body>
+</html>   

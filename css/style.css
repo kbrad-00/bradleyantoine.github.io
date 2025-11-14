@@ -1,0 +1,619 @@
+/* =========================================
+   BRADLEY ANTOINE PORTFOLIO STYLESHEET
+   ========================================= */
+
+/* THEME COLORS */
+:root {
+  --color-primary: #ff7300;
+  --color-secondary: #cc00ff;
+  --color-dark-bg: #050509;
+  --color-panel: #0d0d11;
+  --color-light: #f3f3f3;
+  --gradient-primary: linear-gradient(90deg, #ff7300, #cc00ff);
+}
+
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 115, 0, 0.08), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(204, 0, 255, 0.07), transparent 55%),
+    var(--color-dark-bg);
+  color: #eee;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* Scroll progress bar from JS */
+#scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: var(--gradient-primary);
+  z-index: 2000;
+}
+
+/* Generic button style (used by tabs, project buttons, resume link) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.4rem;
+  border-radius: 999px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  background-image: var(--gradient-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  opacity: 0.95;
+}
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(5, 5, 12, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav:hover {
+  background: rgba(5, 5, 14, 0.92);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.nav__links {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+
+.nav__link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #d3c9ff;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__link:hover {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.header {
+  min-height: 100vh;
+  padding: 12rem 5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #060612, #050509 55%, #090714);
+}
+
+.header__title {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  align-items: center;
+  justify-content: center;
+  max-width: 120rem;
+  gap: 3.5rem;
+}
+
+.header__text {
+  text-align: left;
+}
+
+.header__title h1 {
+  font-size: 5.4rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.header__title h4 {
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: #c8c8d8;
+  max-width: 90rem;
+  margin-top: 2rem;
+}
+
+.highlight {
+  background-image: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__img {
+  width: 75%;
+  max-width: 360px;
+  border-radius: 1.6rem;
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transform: translateY(-0.6rem);
+}
+
+/* =========================================
+   MAIN SECTIONS
+   ========================================= */
+.section {
+  padding: 9rem 5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  position: relative;
+}
+
+/* subtle alternating panel feel */
+.section:nth-of-type(odd) {
+  background: radial-gradient(circle at top left, rgba(255, 115, 0, 0.05), transparent 55%);
+}
+
+.section:nth-of-type(even) {
+  background: radial-gradient(circle at bottom right, rgba(204, 0, 255, 0.05), transparent 55%);
+}
+
+.section__title {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.section__description {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-image: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section__header {
+  font-size: 3.2rem;
+  color: #f7f7ff;
+  font-weight: 500;
+}
+
+/* Prevent click-block issues */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* =========================================
+   SKILLS
+   ========================================= */
+.operations {
+  max-width: 100rem;
+  margin: 0 auto;
+  background-color: rgba(10, 10, 18, 0.95);
+  padding: 4rem 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.operations__tab-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.operations__tab {
+  background: #151520;
+  color: #f5f5ff;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.9rem 2.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.operations__tab--active {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: 0 0 18px rgba(255, 100, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+.operations__content {
+  display: none;
+  font-size: 1.6rem;
+  color: #d0d0e0;
+}
+
+.operations__content--active {
+  display: block;
+}
+
+.operations__content ul {
+  margin-top: 1.5rem;
+  padding-left: 2rem;
+}
+
+.operations__content li {
+  margin-bottom: 0.6rem;
+}
+
+/* =========================================
+   PROJECT SLIDER (PROFESSIONAL LOOK)
+   ========================================= */
+.section#section--2 {
+  color: #f7f7ff;
+}
+
+.project-bar {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 4.5rem;
+  padding: 1rem 0;
+}
+
+.project-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 3rem;
+  padding: 2rem 0.5rem;
+  transition: transform 0.45s ease;
+  will-change: transform;
+
+  /* scroll container */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.project-row::-webkit-scrollbar {
+  display: none;
+}
+
+.p-card {
+  min-width: 300px;
+  max-width: 300px;
+  background: rgba(12, 12, 20, 0.98);
+  border-radius: 1.6rem;
+  padding: 1.8rem 1.7rem 2rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  text-align: left;
+}
+
+.p-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.85);
+}
+
+.p-card h3 {
+  font-size: 1.9rem;
+  color: var(--color-primary);
+  margin-bottom: 0.7rem;
+}
+
+.p-card p {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ARROWS */
+.project-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 56px;
+  height: 56px;
+  background: rgba(10, 10, 18, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8);
+  transition: all 0.25s ease;
+}
+
+.project-arrow:hover {
+  background: linear-gradient(135deg, #ff7300, #cc00ff);
+  border-color: transparent;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 0 22px rgba(204, 0, 255, 0.8),
+              0 0 30px rgba(255, 115, 0, 0.9);
+}
+
+.project-arrow--left {
+  left: 4px;
+}
+
+.project-arrow--right {
+  right: 4px;
+}
+
+/* =========================================
+   RESUME VIEWER
+   ========================================= */
+.resume-viewer {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 3rem;
+  background: rgba(10, 10, 18, 0.96);
+  border-radius: 2rem;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.resume-viewer iframe {
+  border-radius: 1.4rem;
+  box-shadow: 0 0 25px rgba(160, 32, 240, 0.3);
+}
+
+.resume-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+  padding: 5rem 3rem 4rem;
+  background: #050509;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.footer__nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2.4rem;
+}
+
+.footer__link {
+  font-size: 1.5rem;
+  color: #d0d0e0;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: var(--color-primary);
+}
+
+.footer__copyright {
+  font-size: 1.35rem;
+  color: #8e8ea0;
+}
+
+/* =========================================
+   MEDIA QUERIES
+   ========================================= */
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 10rem 2.4rem 5rem;
+  }
+
+  .header__title {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .header__text {
+    text-align: center;
+  }
+
+  .header__img {
+    width: 70%;
+    max-width: 280px;
+    margin-top: 3rem;
+  }
+
+  .section {
+    padding: 7rem 2.4rem;
+  }
+
+  .project-arrow {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .project-arrow--left {
+    left: 2px;
+  }
+
+  .project-arrow--right {
+    right: 2px;
+  }
+
+  .resume-viewer {
+    padding: 2rem;
+  }
+}
+
+/* =========================================================
+   NETFLIX SLIDER (FULLY WORKING WITH JS) – UNUSED STYLES
+   (kept here in case you want a second slider later)
+========================================================= */
+
+.nf-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 5rem;
+  padding: 1rem 0;
+}
+
+.nf-track {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.nf-track::-webkit-scrollbar {
+  display: none;
+}
+
+.nf-card {
+  min-width: 300px;
+  max-width: 300px;
+  background: #111;
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(255, 115, 0, 0.35);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.nf-card:hover {
+  transform: scale(1.05);
+}
+
+.nf-card img {
+  width: 100%;
+  height: 260px;
+  border-radius: 1rem;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 12px rgba(204, 0, 255, 0.3);
+}
+
+.nf-card h3 {
+  font-size: 1.9rem;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.nf-card p {
+  font-size: 1.4rem;
+  color: #ccc;
+}
+
+/* Netflix arrows */
+.nf-left,
+.nf-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 60px;
+  height: 60px;
+  background: rgba(30, 30, 30, 0.65);
+  border: 2px solid rgba(255, 115, 0, 0.7);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 15px rgba(255, 115, 0, 0.5);
+  transition: all 0.25s ease;
+}
+
+.nf-left:hover,
+.nf-right:hover {
+  background: rgba(255, 115, 0, 0.9);
+  border-color: rgba(204, 0, 255, 1);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 0 20px rgba(204, 0, 255, 1),
+              0 0 30px rgba(255, 115, 0, 1);
+}
+
+.nf-left {
+  left: 10px;
+}
+
+.nf-right {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .nf-left,
+  .nf-right {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
